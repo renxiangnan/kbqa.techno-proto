@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+}
+
+group 'org.iiai'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Test tools
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    
+    // Common tools
+    compile group: 'log4j', name: 'log4j', version: '1.2.17'
+    compile group: 'commons-httpclient', name: 'commons-httpclient', version: '3.1'
+
+
+    // Index tools
+    compile group: 'org.apache.lucene', name: 'lucene-core', version: '6.6.6'
+    compile group: 'org.apache.lucene', name: 'lucene-queries', version: '6.6.6'
+    compile group: 'org.apache.lucene', name: 'lucene-queryparser', version: '6.6.6'
+    compile group: 'org.apache.lucene', name: 'lucene-analyzers-common', version: '6.6.6'
+
+    // NLP tool
+    compile group: 'edu.stanford.nlp', name: 'stanford-corenlp', version: '3.9.2'
+    compile group: 'edu.stanford.nlp', name: 'stanford-corenlp', version: '3.9.2', classifier: 'models'
+    compile group: 'edu.stanford.nlp', name: 'stanford-parser', version: '3.6.0'
+    compile group: 'org.maltparser', name: 'maltparser', version: '1.9.2'
+    compile group: 'it.unimi.dsi', name: 'mg4j', version: '4.0.3'
+    configurations.all {
+        resolutionStrategy {
+            force 'xml-apis:xml-apis:1.4.01'
+        }
+    }
+}
